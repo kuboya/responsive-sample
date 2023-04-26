@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="node_modules/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="scss/index.scss" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <div class="container">
+      <header class="navber">
+        <div class="navber__header">
+          <div class="logo">
+            <h1><img src="/vite.svg" alt="Vite Logo" />Vite App</h1>
+          </div>
+          <button class="navber__header__humberger">ボタン</button>
+        </div>
+        <div class="navber__menu">
+          <nav>
+            <ul class="navber__menu__list">
+              <li class="navber__menu__list__item">
+                <a class="navber__menu__list__link" href="/">Home</a>
+              </li>
+              <li class="navber__menu__list__item">
+                <a class="navber__menu__list__link" href="/about">About</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div id="app"></div>
+      <!-- <script type="module" src="/main.js"></script> -->
+    </div>
   </body>
 </html>

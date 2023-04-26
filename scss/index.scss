@@ -1,0 +1,66 @@
+@charset "UTF-8";
+$brakepoint: (
+  sp: 'max-width: 767px',
+  tab: 'min-width: 768px',
+  pc: 'min-width: 992px',
+);
+@mixin media($media) {
+  @if map-has-key($brakepoint, $media) {
+    @media screen and (#{map-get($brakepoint, $media)}) {
+      @content;
+    }
+  }
+}
+.navber {
+  @include media('pc') {
+    display: flex;
+    justify-content: space-between;
+    width: 991px;
+  }
+  padding: 15px;
+  align-items: center;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__humberger {
+      // 767以下のサイズでハンバーガーメニューを表示する
+      @include media('tab') {
+        display: none;
+      }
+    }
+  }
+
+  &__menu {
+    @include media('sp') {
+      display: none;
+    }
+    @include media('pc') {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__list {
+      display: flex;
+      list-style: none;
+      justify-content: flex-end;
+
+      &__item {
+        margin-right: 40px;
+
+        &__link {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.container {
+  @include media('pc') {
+    display: flex;
+    justify-content: center;
+  }
+  width: 100%;
+}
